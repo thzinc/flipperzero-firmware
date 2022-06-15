@@ -10,8 +10,8 @@
 #define MEASUREMENT_INTERVAL_MS 250
 
 // Adapted from https://github.com/skgrange/threadr/blob/fd42380883133fe7a47c479e778afe644a507334/R/absolute_humidity.R
-#define RH_TO_AH(temp_c, rh_pct)                                                  \
-    ((6.112 * exp((17.67 * temp_c) / (temp_c + 243.5)) * (rh_pct)*100 * 2.1674) / \
+#define RH_TO_AH(temp_c, rh_pct)                                                   \
+    ((6.112 * expf((17.67 * temp_c) / (temp_c + 243.5)) * (rh_pct)*100 * 2.1674) / \
      (273.15 + temp_c))
 
 struct SensorWorker {
