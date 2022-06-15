@@ -1,0 +1,19 @@
+{
+  "makefile.extensionOutputFolder": "./.vscode",
+  "files.associations": {
+    "bq25896.h": "c",
+    "furi.h": "c",
+    "gui.h": "c",
+    "*.tcc": "c",
+    "furi_hal_i2c_config.h": "c",
+    "furi_hal.h": "c",
+    "furi_hal_i2c.h": "c",
+    "common_defines.h": "c",
+    "sgp30.h": "c",
+    "furi_hal_resources.h": "c",
+    "crc32_calc.h": "c"
+  },
+  "cmake.configureOnOpen": true,
+  "C_Cpp.errorSquiggles": "Enabled",
+  "cSpell.words": ["Aosong", "ASAIR", "furi", "Sensiron", "tvoc"]
+}
