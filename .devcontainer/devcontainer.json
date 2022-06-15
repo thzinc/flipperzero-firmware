@@ -1,0 +1,21 @@
+{
+  "name": "Linux container",
+  "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/project",
+  "extensions": [
+    "cschlosser.doxdocgen",
+    "esbenp.prettier-vscode",
+    "josetr.cmake-language-support-vscode",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.cpptools-extension-pack",
+    "ms-vscode.cpptools-themes",
+    "ms-vscode.cpptools",
+    "ms-vscode.makefile-tools",
+    "streetsidesoftware.code-spell-checker",
+    "twxs.cmake",
+    "xaver.clang-format"
+  ]
+}
