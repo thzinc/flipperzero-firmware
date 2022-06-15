@@ -128,13 +128,13 @@ static void draw_callback(Canvas* canvas, void* ctx) {
         }
 
         string_reset(label);
-        string_printf(label, "%2.1f C", voc_monitor->gas->temp_c);
+        string_printf(label, "%2.1f C", (double)voc_monitor->gas->temp_c);
         canvas_set_font(canvas, FontSecondary);
         canvas_draw_str_aligned(
             canvas, 0, canvas_height(canvas), AlignLeft, AlignBottom, string_get_cstr(label));
 
         string_reset(label);
-        string_printf(label, "%3.1f RH%%", voc_monitor->gas->rh_pct * 100);
+        string_printf(label, "%3.1f RH%%", (double)voc_monitor->gas->rh_pct * 100);
         canvas_set_font(canvas, FontSecondary);
         canvas_draw_str_aligned(
             canvas,

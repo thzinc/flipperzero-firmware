@@ -94,7 +94,8 @@ bool sgp30_set_humidity(FuriHalI2cBusHandle* handle, float ah_gm3) {
     bool success =
         furi_hal_i2c_tx(handle, SGP30_I2C_ADDRESS, cmd, sizeof(cmd), SGP30_I2C_TIMEOUT_TICKS);
     if(!success) {
-        FURI_LOG_E(SGP30_TAG, "failed to set humidity %d g/㎥ (%x fixed point)", ah_gm3, fp);
+        FURI_LOG_E(
+            SGP30_TAG, "failed to set humidity %f g/㎥ (%x fixed point)", (double)ah_gm3, fp);
         return false;
     }
 
