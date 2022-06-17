@@ -106,7 +106,7 @@ bool aht10_init(FuriHalI2cBusHandle* handle) {
 bool aht10_get_measurement(FuriHalI2cBusHandle* handle, float* temp_c, float* rh_pct) {
     bool success = aht10_trigger(handle);
     if(!success) {
-        FURI_LOG_W(AHT10_TAG, "failed to trigger measurement");
+        FURI_LOG_E(AHT10_TAG, "failed to trigger measurement");
         return false;
     }
 
@@ -119,7 +119,7 @@ bool aht10_get_measurement(FuriHalI2cBusHandle* handle, float* temp_c, float* rh
 
         success = aht10_status(handle, &status);
         if(!success) {
-            FURI_LOG_W(AHT10_TAG, "failed while waiting for measurement");
+            FURI_LOG_E(AHT10_TAG, "failed while waiting for measurement");
             return false;
         }
 
@@ -128,7 +128,17 @@ bool aht10_get_measurement(FuriHalI2cBusHandle* handle, float* temp_c, float* rh
 
     success = aht10_read_measurement(handle, temp_c, rh_pct);
     if(!success) {
-        FURI_LOG_W(AHT10_TAG, "failed to read measurement");
+        FURI_LOG_E(AHT10_TAG, "failed to read measurement");
+        return false;
+    }
+
+    return true;
+}
+
+bool aht10_deinit(FuriHalI2cBusHandle* handle) {
+    bool success = aht10_reset(handle);
+    if(!success) {
+        FURI_LOG_E(AHT10_TAG, "failed to reset sensor");
         return false;
     }
 
