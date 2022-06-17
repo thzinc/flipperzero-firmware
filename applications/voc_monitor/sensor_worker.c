@@ -4,6 +4,7 @@
 #include "sensor_worker.h"
 #include "drivers/aht10.h"
 #include "drivers/sgp30.h"
+#include "drivers/general_call.h"
 
 #define TAG "SensorWorker"
 #define RETRY_TIMEOUT_MS 1000
@@ -51,7 +52,8 @@ static int32_t worker_thread(void* context) {
         }
 
         furi_hal_i2c_acquire(&furi_hal_i2c_handle_external);
-        success = aht10_init(&furi_hal_i2c_handle_external) &&
+        success = general_call_reset(&furi_hal_i2c_handle_external) &&
+                  aht10_init(&furi_hal_i2c_handle_external) &&
                   sgp30_init(&furi_hal_i2c_handle_external, &initializedAfterTicks);
         furi_hal_i2c_release(&furi_hal_i2c_handle_external);
 
@@ -97,6 +99,15 @@ static int32_t worker_thread(void* context) {
                 instance->callback_context);
             furi_hal_delay_ms(MEASUREMENT_INTERVAL_MS);
         }
+    }
+
+    furi_hal_i2c_acquire(&furi_hal_i2c_handle_external);
+    success = aht10_deinit(&furi_hal_i2c_handle_external) &&
+              general_call_reset(&furi_hal_i2c_handle_external);
+    furi_hal_i2c_release(&furi_hal_i2c_handle_external);
+
+    if(!success) {
+        FURI_LOG_W(TAG, "failed to deinitialize sensors; may draw unnecessary power");
     }
 
     return 0;

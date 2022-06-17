@@ -1,7 +1,6 @@
 #pragma once
 
 #include <furi_hal_i2c.h>
-#include <furi_hal_rtc.h>
 
 #define SGP30_I2C_ADDRESS (0x58 << 1)
 

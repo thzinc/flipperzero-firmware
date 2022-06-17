@@ -21,3 +21,11 @@ bool aht10_init(FuriHalI2cBusHandle* handle);
  * @return      true if measurement was triggered and read successfully; false otherwise
  */
 bool aht10_get_measurement(FuriHalI2cBusHandle* handle, float* temp_c, float* rh_pct);
+
+/**
+ * @brief Deinitialize the sensor
+ * 
+ * @param       handle pointer to FuriHalI2cBusHandle instance
+ * @return      true if sensor was deinitialized successfully; false otherwise
+ */
+bool aht10_deinit(FuriHalI2cBusHandle* handle);
