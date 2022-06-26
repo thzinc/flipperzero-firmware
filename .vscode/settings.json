@@ -13,7 +13,7 @@
     "furi_hal_resources.h": "c",
     "crc32_calc.h": "c"
   },
-  "cmake.configureOnOpen": true,
+  "cmake.configureOnOpen": false,
   "C_Cpp.errorSquiggles": "Enabled",
   "cSpell.words": ["Aosong", "ASAIR", "furi", "Sensiron", "tvoc"]
 }

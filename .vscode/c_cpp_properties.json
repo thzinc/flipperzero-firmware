@@ -1,20 +1,19 @@
 {
-    "configurations": [
-        {
-            "name": "devcontainer",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/lib/FreeRTOS-Kernel/portable/GCC/ARM_CM4F",
-                "${workspaceFolder}/lib/STM32CubeWB/Drivers/STM32WBxx_HAL_Driver/Inc"
-            ],
-            "defines": [],
-            "macFrameworkPath": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++14",
-            "intelliSenseMode": "${default}",
-            "configurationProvider": "ms-vscode.makefile-tools"
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "devcontainer",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/lib/FreeRTOS-Kernel/portable/GCC/ARM_CM4F",
+        "${workspaceFolder}/lib/STM32CubeWB/Drivers/STM32WBxx_HAL_Driver/Inc"
+      ],
+      "defines": [],
+      "macFrameworkPath": [],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu17",
+      "cppStandard": "gnu++14",
+      "intelliSenseMode": "${default}"
+    }
+  ],
+  "version": 4
 }
