@@ -1,0 +1,12 @@
+App(
+    appid="co2_monitor",
+    name="CO2 Monitor",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="co2_monitor_app",
+    cdefines=["APP_CO2_MONITOR"],
+    requires=["gui"],
+    stack_size=1 * 1024,
+    order=20,
+    fap_icon="co2_monitor_10px.png",
+    fap_category="Tools",
+)
